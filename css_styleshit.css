@@ -246,13 +246,13 @@ p.lead { color: var(--muted); margin: 8px 0 0; }
 }
 
 /* Task 2: Card Group (CSS-only stacking) */
-.grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 1rem; } /* Default stack */
+.grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 1rem; }
 
-@media (min-width: 576px) and (max-width: 991.98px) { /* Tablet: 1fr */
+@media (min-width: 576px) and (max-width: 991.98px) { 
   .grid { grid-template-columns: 1fr; }
 }
 
-@media (min-width: 992px) { /* Desktop: 1fr 360px */
+@media (min-width: 992px) { 
   .grid { grid-template-columns: 1fr 360px; gap: 2rem; }
 }
 .btn {
