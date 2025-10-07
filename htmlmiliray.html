@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AK-47 и известные образцы оружия</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css_styleshit.css">
+</head>
+<body>
+    <!-- Task 5: Bootstrap Navbar (collapsible на mobile) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> <!-- bg-dark overridden to --bg -->
+        <div class="container-fluid px-3 px-lg-4"> <!-- Task 4: Spacing responsive -->
+            <a class="navbar-brand" href="htmlmiliray.html">
+                <span class="logo-mark px-2 py-1 rounded" style="background: linear-gradient(135deg, var(--accent), #232d1b); color: #232d1b; font-weight: 700; font-size: 1.5rem;">AK</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="htmlmiliray.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="history_ak47.html">История АК</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ak47_vs_m16.html">Сравнение</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Галерея</a></li>
+                    <li class="nav-item"><a class="nav-link" href="production.html">Производство</a></li>
+                    <li class="nav-item"><a class="nav-link" href="quiz.html">Викторина</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sitemap.html">Карта сайта</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-5 pt-5"> <!-- Task 3: Container + Spacing (mt-5 on desktop) -->
+        <nav aria-label="breadcrumb" class="breadcrumbs mt-3"> <!-- Accessibility: aria-label -->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="htmlmiliray.html">Главная</a></li>
+            </ol>
+        </nav>
+
+        <header class="text-center mb-4"> <!-- Task 4: mb-4 spacing -->
+            <h1>AK-47 и известные образцы оружия</h1> <!-- Responsive typography -->
+            <p class="lead">Краткий историко-технический обзор AK-47 и шести других популярных образцов стрелкового оружия.</p>
+            <a href="#weapons" class="btn btn-primary mt-2">Узнать больше</a> <!-- Task 6: Bootstrap button -->
+        </header>
+
+        <!-- Task 3 & 8: Bootstrap Grid + Cards -->
+        <div class="row g-3 mb-4" id="weapons"> <!-- g-3: gap responsive -->
+            <!-- Card 1: AK-47 -->
+            <div class="col-12 col-md-6 col-lg-4"> <!-- 1 mobile, 2 tablet, 3 desktop -->
+                <article class="card weapon h-100"> <!-- Semantic: article -->
+                    <img src="https://www.pragueranger.cz/upload/20241114220842-9012--800.webp" class="card-img-top" alt="AK-47 rifle" loading="lazy"> <!-- Accessibility: alt -->
+                    <div class="card-body p-3"> <!-- Task 4: p-3 spacing -->
+                        <h2 class="card-title">AK-47</h2>
+                        <p class="card-text">Разработан Михаилом Калашниковым в конце 1940-х годов. Известен своей надёжностью в тяжёлых условиях и простотой обслуживания.</p>
+                        <dl class="specs row g-2">
+                            <dt class="col-6">Происхождение</dt><dd class="col-6">СССР</dd>
+                            <dt class="col-6">Калибр</dt><dd class="col-6">7.62×39 мм</dd>
+                            <dt class="col-6">Тип</dt><dd class="col-6">Штурмовой автомат</dd>
+                            <dt class="col-6">Принят на вооружение</dt><dd class="col-6">1949 г.</dd>
+                        </dl>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Card 2: AKM (аналогично, сокращаю для места) -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="card weapon h-100">
+                    <img src="https://www.pragueranger.cz/upload/20241114231903-1856-1200-675.webp" alt="AK-47" style="width:100%;border-radius:8px;margin-top:8px">
+                    <div class="card-body p-3">
+                        <h2 class="card-title">AKM</h2>
+                        <p class="card-text">Модернизированная и облегчённая версия АК, внедрённая в 1959 году. Широко распространена благодаря простоте производства.</p>
+                        <dl class="specs row g-2">
+                            <dt class="col-6">Происхождение</dt><dd class="col-6">СССР</dd>
+                            <dt class="col-6">Калибр</dt><dd class="col-6">7.62×39 мм</dd>
+                            <dt class="col-6">Особенность</dt><dd class="col-6">Лёгкий штампованный затылок и сниженная масса</dd>
+                            <dt class="col-6">Принят</dt><dd class="col-6">1959 г.</dd>
+                        </dl>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Card 3: AK-74 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="card weapon h-100">
+                    <img src="https://i.ytimg.com/vi/mwjD_qX___4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCvxVKmydQ0Nx-VikvL2IRpz4hCBw"  alt="AK-47" style="width:100%;border-radius:8px;margin-top:8px">
+                    <div class="card-body p-3">
+                        <h2 class="card-title">AK-74</h2>
+                        <p class="card-text">Разработка 1970-х годов: адаптация под более лёгкий и современный патрон 5.45×39 мм, улучшенная баллистика и точность на дистанции.</p>
+                        <dl class="specs row g-2">
+                            <dt class="col-6">Происхождение</dt><dd class="col-6">СССР</dd>
+                            <dt class="col-6">Калибр</dt><dd class="col-6">5.45×39 мм</dd>
+                            <dt class="col-6">Тип</dt><dd class="col-6">Штурмовой автомат</dd>
+                            <dt class="col-6">Принят</dt><dd class="col-6">1974 г.</dd>
+                        </dl>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Cards 4-7: M16, AR-15, MP5, Glock (аналогично, с своими данными) -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <article class="card weapon h-100">
+                    <img src="https://www.pragueranger.cz/upload/20241114230946-2396-1200-675.webp" class="card-img-top" alt="M16 rifle" loading="lazy">
+                    <div class="card-body p-3">
+                        <h2 class="card-title">M16</h2>
+                        <p class="card-text">Американский штурмовой автомат, принятый на вооружение в 1960-х годах. Отличается использованием винтовочного патрона меньшего калибра и небольшой отдачей.</p>
+                        <dl class="specs row g-2">
+                            <dt class="col-6">Происхождение</dt><dd class="col-6">США</dd>
+                            <dt class="col-6">Калибр</dt><dd class="col-6">5.56×45 мм</dd>
+                            <dt class="col-6">Тип</dt><dd class="col-6">Штурмовая винтовка</dd>
+                            <dt class="col-6">Принят</dt><dd class="col-6">1964 г.</dd>
+                        </dl>
+                    </div>
+                </article>
+            </div>
+            <!-- Добавь аналогично для AR-15, MP5, Glock — скопируй структуру -->
+
+        </div>
+
+
+        <section>
+            <h2>Краткие отличия и применение</h2>
+            <p>Здесь собраны ключевые различия: калибр, назначение и исторический контекст. АК‑серия ценится за надёжность; западные образцы (M16/AR‑15) — за баллистику и модульность; MP5 — как специализированный пистолет‑пулемёт для спецопераций; Glock — как удобный и надёжный пистолет.</p>
+        </section>
+    </main>
+
+    <footer class="container"> <!-- Имена команды -->
+        <p>&copy; Информационный лендинг. Материалы представлены в историко‑техническом ключе. Не является руководством к действию.</p>
+        <p>Команда: Military Squad, Члены: Иван Иванов, Петр Петров, Группа: WEB-101</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
