@@ -41,8 +41,37 @@
     .correct { background: var(--success); color: #fff; }
     .wrong { background: var(--danger); color: #fff; }
   </style>
+<style>
+    #datetime {
+            position: fixed;
+            top: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1050;
+            background: rgba(35, 45, 27, 0.25); /* Полупрозрачный фон */
+            color: #39ff14; /* Ярко-зелёный, как у военных часов */
+            padding: 6px 18px;
+            border-radius: 0.5rem;
+            font-size: 1.15rem;
+            font-family: 'Share Tech Mono', 'Consolas', 'Courier New', monospace; /* моноширинный стиль */
+            box-shadow: none;
+            letter-spacing: 0.12em;
+            display: inline-block;
+            margin: 0 auto 18px auto;
+            font-weight: 700;
+            text-shadow: 0 0 6px #39ff1466, 0 1px 2px #000;
+            border: 1.5px solid #39ff1466;
+            transition: background 0.5s;
+            backdrop-filter: blur(2px);
+    }
+    @media (max-width: 575px) {
+            #datetime { font-size: 0.95rem; padding: 4px 8px; top: 56px; }
+    }
+</style>
+<link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
+<div id="datetime"></div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> <!-- bg-dark overridden to --bg -->
         <div class="container-fluid px-3 px-lg-4"> 
             <a class="navbar-brand" href="htmlmiliray.html">
@@ -60,9 +89,6 @@
       <li class="nav-item mx-1"><a class="nav-link" href="production.html">Производство</a></li>
       <li class="nav-item mx-1"><a class="nav-link" href="quiz.html">Викторина</a></li>
       <li class="nav-item mx-1"><a class="nav-link" href="sitemap.html">Карта сайта</a></li>
-      <li class="nav-item mx-1"><a class="nav-link" href="login.html">Логин</a></li>
-      <li class="nav-item mx-1"><a class="nav-link" href="register.html">Регистрация</a></li>
-      <li class="nav-item mx-1"><a class="nav-link" href="faq.html">FAQ</a></li>
               </ul>
             </div>
         </div>
@@ -176,5 +202,8 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scriptjs.js"></script>
+    <script src="script.js"></script>
+  </div>
 </body>
 </html>
