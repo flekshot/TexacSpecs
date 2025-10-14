@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ — Часто задаваемые вопросы</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: #232d1b;
+      color: #e2e8c0;
+      min-height: 100vh;
+    }
+    .faq-container {
+      max-width: 700px;
+      margin: 3rem auto;
+      background: #3a4d2d;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(35,45,27,0.15);
+      padding: 2rem 1.5rem;
+    }
+    .faq-title {
+      text-align: center;
+      font-weight: 900;
+      margin-bottom: 2rem;
+      color: #c19a6b;
+      letter-spacing: 2px;
+    }
+    .faq-item {
+      border-bottom: 1px solid #6b8e23;
+      padding: 1rem 0;
+    }
+    .faq-question {
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #fff;
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .faq-question:hover {
+      color: #c19a6b;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(.4,0,.2,1), padding 0.3s;
+      color: #e2e8c0;
+      padding: 0 0;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      padding: 0.7rem 0 0.7rem 0;
+    }
+    .faq-arrow {
+      transition: transform 0.3s;
+      font-size: 1.2rem;
+      margin-left: 10px;
+    }
+    .faq-item.active .faq-arrow {
+      transform: rotate(90deg);
+      color: #c19a6b;
+    }
+  </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid px-3 px-lg-4"> 
+            <a class="navbar-brand" href="htmlmiliray.html">
+                <span class="logo-mark px-2 py-1 rounded" style="background: linear-gradient(135deg, var(--accent), #232d1b); color: #232d1b; font-weight: 700; font-size: 1.5rem; margin: 10px;">AK</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+      <li class="nav-item mx-1"><a class="nav-link" href="htmlmiliray.html">Главная</a></li>
+      <li class="nav-item mx-1"><a class="nav-link" href="history_ak47.html">История АК</a></li>
+      <li class="nav-item mx-1"><a class="nav-link" href="ak47_vs_m16.html">Сравнение</a></li>
+      <li class="nav-item mx-1"><a class="nav-link" href="gallery.html">Галерея</a></li>
+      <li class="nav-item mx-1"><a class="nav-link" href="production.html">Производство</a></li>
+      <li class="nav-item mx-1"><a class="nav-link" href="quiz.html">Викторина</a></li>
+      <li class="nav-item mx-1"><a class="nav-link" href="sitemap.html">Карта сайта</a></li>
+              </ul>
+            </div>
+        </div>
+    </nav>
+  <div class="faq-container">
+    <h1 class="faq-title">Часто задаваемые вопросы</h1>
+    <div class="faq-item">
+      <div class="faq-question">
+        Как зарегистрироваться на сайте?
+        <span class="faq-arrow">&#9654;</span>
+      </div>
+      <div class="faq-answer">
+        Перейдите на страницу регистрации, заполните все поля и нажмите кнопку "Зарегистрироваться". После успешной регистрации вы увидите приветствие.
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">
+        Почему не получается войти в аккаунт?
+        <span class="faq-arrow">&#9654;</span>
+      </div>
+      <div class="faq-answer">
+        Проверьте правильность введённых имени пользователя и пароля. Пароль должен быть не менее 6 символов. Если забыли пароль — обратитесь к администратору.
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">
+        Как изменить свой пароль?
+        <span class="faq-arrow">&#9654;</span>
+      </div>
+      <div class="faq-answer">
+        После входа в аккаунт перейдите в настройки профиля и выберите пункт "Сменить пароль".
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">
+        Как связаться с поддержкой?
+        <span class="faq-arrow">&#9654;</span>
+      </div>
+      <div class="faq-answer">
+        Используйте форму обратной связи на странице "Контакты" или напишите на email, указанный внизу сайта.
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">
+        Могу ли я удалить свой аккаунт?
+        <span class="faq-arrow">&#9654;</span>
+      </div>
+      <div class="faq-answer">
+        Да, для удаления аккаунта обратитесь в поддержку через форму обратной связи.
+      </div>
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll('.faq-question').forEach(function(question) {
+      question.addEventListener('click', function() {
+        const item = this.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
