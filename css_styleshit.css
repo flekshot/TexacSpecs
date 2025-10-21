@@ -9,42 +9,78 @@
   --glass: rgba(193,154,107,0.07);
   --danger: #a94442;
   --success: #4cae4c;
+  /* Акценты */
+  --accent: #c19a6b; /* Ваш основной золотистый/коричневый акцент */
+  --text-color: #e6eef6;
+  
+  /* Цвета фона */
+  --bg-main-color: #232d1b; /* Темно-зеленый основной фон */
+  --card-color: #2e3b23; /* Фон карточек */
+  
+  /* Фоновый градиент (для body::before) */
+  --bg-before-gradient: linear-gradient(90deg, var(--bg-main-color) 60%, #1a1f13 100%);
+  
+  /* Фоновый паттерн (для body) */
+  --bg-pattern-color-1: #26351f;
+  --bg-pattern-color-2: #232d1b;
+  --bg-pattern-color-3: #2e3b23;
+}
 }
 
 body {
   margin: 0;
   font-family: 'Staatliches', 'Segoe UI', 'Roboto', Arial, sans-serif;
-  background: repeating-linear-gradient(
-    135deg,
-    #26351f 0px,
-    #232d1b 40px,
-    #2e3b23 80px,
-    #2e3b23 120px,
-    #232d1b 160px   #2e3b23 160px   #232d1b 0px,
-    #232d1b 40px,
-    #2e3b23 40px,
-    #2e3b23 80px
-  );
-  color: #e6eef6;
-  background-image:
-    repeating-linear-gradient(
-      135deg,
-      #3a4a2a 0px,
-      #232d1b 40px,
-      #2e3b23 80px,
-      #2e3b23 120px,
-      #232d1b 160px
-    ),
-    repeating-linear-gradient(
-      45deg,
-      #4b5c36 0px,
-      transparent 60px,
-      #4b5c36 120px,
-      transparent 180px
-    );
+background: var(--bg-pattern); 
+  color: var(--text-color);
+  transition: background 0.5s, color 0.5s;
+  min-height: 100vh;
   background-blend-mode: multiply;
+  background:var(--bg--color);
+  color: var(--text-color);
 }
 
+body.dark-theme {
+/* 1. НЕОНОВО-ЗЕЛЁНЫЕ АКЦЕНТЫ */
+  --accent: #39ff14;      /* Яркий акцентный цвет */
+  --text-color: #39ff14;  /* Цвет текста */
+
+  /* 2. ФОН, ПЕРЕКЛЮЧАЮЩИЙСЯ НА ЧЁРНЫЙ */
+  --bg-main-color: #000000; /* Главный цвет фона - ЧЁРНЫЙ */
+  --card-color: #0a0a0a;  /* Фон карточек - Очень тёмный */
+
+  /* 3. ЧЁРНЫЕ ОТТЕНКИ ДЛЯ ПАТТЕРНА */
+  --bg-pattern-color-1: #1a1f18; /* Едва заметный тёмный оттенок */
+  --bg-pattern-color-2: #0d110c; /* Почти чёрный оттенок */
+  --bg-pattern-color-3: #131711;
+  
+  /* Фон body::before (Граница градиента тоже становится чёрной) */
+  --bg-before-gradient: linear-gradient(90deg, var(--bg-main-color) 60%, #000000 100%);
+}
+body.dark-theme .card, body.dark-theme .weapon {
+  box-shadow:
+    /* Сильное свечение, исходящее от акцентного цвета */
+    0 0 16px 4px var(--accent),
+    0 0 30px 10px rgba(57, 255, 20, 0.4); 
+  border-color: var(--accent);
+}
+body.dark-theme .card, body.dark-theme .weapon {
+  box-shadow:
+    0 0 16px 2px var(--accent),
+    0 6px 24px rgba(57, 255, 20, 0.4);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg-before-gradient);
+  transition: background 0.3s ease;
+  opacity: 0.95;
+  z-index: -2;
+}
 .container {
   max-width: 1100px;
   margin: 40px auto;
@@ -111,7 +147,7 @@ p.lead {
 }
 
 .card {
-  background: var(--card);
+  background: var(--card-color);
   border-radius: 14px;
   padding: 20px;
   box-shadow: 0 6px 24px rgba(35,45,27,0.6);
@@ -205,6 +241,17 @@ footer {
     margin: 0 12px 12px 12px;
     font-size: 0.95rem;
 }
+.navbar {
+  border-bottom: 2px solid var(--accent);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  background: var(--bg-main-color);
+  z-index: 10;
+}
+.navbar-brand img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
 /* Bootstrap overrides */
 .navbar-dark .navbar-brand { color: var(--accent) !important; }
 .navbar-dark .nav-link { color: var(--muted) !important; }
@@ -223,10 +270,22 @@ h1, h2, h3, h4 {
 }
 p.lead { color: var(--muted); margin: 8px 0 0; }
 
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
 @media (max-width: 575.98px) { /* Mobile */
   h1 { font-size: 1.5rem; }
   h2 { font-size: 1.2rem; }
   p { font-size: 0.9rem; }
+  .grid {
+    grid-template-columns: 1fr;
+  }
   .container { padding: 12px !important; margin: 20px auto !important; }
   .btn { padding: 6px 12px; font-size: 0.875rem; } /* btn-sm effect */
 }
@@ -281,7 +340,13 @@ p.lead { color: var(--muted); margin: 8px 0 0; }
 
 
 .weapon-img, .card.weapon img {
-    height: 180px;
+  border : 3px  solid var(--accent);
+    box-shadow:
+    0 0 18px 2px #c19a6bcc, 
+    0 4px 16px #232d1b;
+    filter: grayscale(20%) contrast(1.1);
+    transition: filter 0.2s, transform 0.2s;  
+  height: 180px;
     object-fit: cover;
     width: 100%;
     border-radius: 8px;
@@ -290,8 +355,11 @@ p.lead { color: var(--muted); margin: 8px 0 0; }
 }
 
 .weapon img:hover {
-  filter: none;
-  transform: scale(1.03) rotate(-2deg);
+  filter: grayscale(0%) contrast(1) brightness(1.1);
+  transform: scale(1.02);
+  box-shadow:
+    0 0 24px 4px var(--accent), 
+    0 8px 32px rgba(0,0,0,0.8);
 }
 .card-body {
     flex: 1 1 auto;
@@ -371,6 +439,7 @@ body::before {
   background: var(--glass);
   color: var(--accent);
   text-decoration: none;
+  text-shadow: 0 0 8px var(--accent);
   border-radius: 6px;
   border: 1px solid var(--accent);
   transition: all 0.3s ease;
@@ -380,13 +449,15 @@ body::before {
 
 .nav-link:hover {
   background: var(--accent);
+  font-size: 1.15rem;
+  letter-spacing: 1px;
+  transition: color 0.2s,text-shadow 0.2s, transform 0.2s;
   color: #232d1b;
   transform: translateY(-2px);
 }
 .breadcrumbs {
-  margin: 16px 0;
-  color: var(--muted);
-  font-size: 14px;
+  margin: 15px 0;
+  font-size: 0.9rem;
 }
 
 .breadcrumbs a {
