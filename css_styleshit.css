@@ -368,7 +368,16 @@ p.lead { color: var(--muted); margin: 8px 0 0; }
     display: flex;
     flex-direction: column;
 }
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
+}
 
+/* Класс, который будет запускать анимацию */
+.shake-animation {
+  animation: shake 0.5s ease-in-out;
+}
 .card-text {
     max-height: 140px;      /* Одинаковая высота для всех карточек */
     min-height: 140px;      /* Гарантирует одинаковый размер даже при коротком тексте */
@@ -459,7 +468,7 @@ body::before {
   text-shadow: 0 0 8px var(--accent);
 }
 #themeToggleBtn {
-  /* Кнопка должна использовать акцентный цвет и быть прозрачной для фона */
+ 
   color: var(--text-color); 
   border-color: var(--accent);
   background-color: transparent;
@@ -467,9 +476,9 @@ body::before {
 }
 
 #themeToggleBtn:hover {
-  /* В темном режиме кнопка будет светиться неоновым */
+ 
   background-color: var(--accent);
-  color: var(--bg-main-color); /* чтобы текст кнопки стал темным, когда фон яркий */
+  color: var(--bg-main-color); 
 }
 .breadcrumbs {
   margin: 15px 0;
