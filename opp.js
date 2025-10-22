@@ -1,11 +1,15 @@
-// --- 1. ТРЕБОВАНИЕ: Динамическое изменение стилей (Переключатель темы) ---
 
 document.addEventListener('DOMContentLoaded', function() {
     const themeToggleBtn = document.getElementById('themeToggleBtn');
     const body = document.body;
     
-    // Функция для сохранения и применения темы
     function applyTheme(theme) {
+        // Добавляем звуковой эффект
+        const toggleSound = new Audio('sound.mp3');
+        toggleSound.play().catch(error => {
+            console.warn("Audio playback failed:", error);
+        });
+
         if (theme === 'dark') {
             body.classList.add('dark-theme');
             themeToggleBtn.textContent = '☀️ День';
@@ -17,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Проверяем сохраненную тему в Local Storage при загрузке страницы
+    
     const savedTheme = localStorage.getItem('theme') || 'day';
     applyTheme(savedTheme);
 
@@ -30,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // --- (Опционально) Обновление времени, которое уже есть в ваших файлах ---
+    
 
     // Функция для обновления текущей даты и времени
     function updateDateTime() {
